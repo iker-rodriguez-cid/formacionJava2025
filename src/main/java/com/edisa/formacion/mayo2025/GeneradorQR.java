@@ -12,7 +12,7 @@ import java.nio.file.Path;
 
 public class GeneradorQR {
     public static void main(String[] args) {
-        if (args.length < 2) {
+        if (args.length != 2) {
             System.err.println("Uso: java GeneradorQR \"<texto>\" \"<ruta_salida.jpg>\"");
             System.exit(1);
         }
