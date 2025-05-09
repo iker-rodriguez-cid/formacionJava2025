@@ -1,12 +1,11 @@
 package com.edisa.formacion.mayo2025.DropWizard;
 
+
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
-
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
 
 public class Main extends Application<DropWizardConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -23,5 +22,6 @@ public class Main extends Application<DropWizardConfiguration> {
     public void run(DropWizardConfiguration configuration, Environment environment) {
         final Recursos resource = new Recursos();
         environment.jersey().register(resource);
+        environment.jersey().register(MultiPartFeature.class);
     }
 }
